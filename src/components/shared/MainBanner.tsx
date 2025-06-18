@@ -6,7 +6,7 @@ import { Shield, Wind } from "lucide-react";
 export default function MainBanner() {
   return (
     <div className="bg-[#0f969c1a]">
-      <div className=" container px-5 md:px-1 mx-auto flex flex-col md:flex-row md:ustify-between gap-5 py-10 md:py-35 pb-20">
+      <div className=" container px-5 md:px-1 mx-auto flex flex-col md:flex-row md:justify-between gap-5 py-10 md:py-35 pb-20">
         <div className="w-full max-w-[667px]">
           <div className="flex items-center md:items-start flex-col gap-6 mb-12">
             <h4 className="text-[#31708e] w-full max-w-[445px] text-center  text-lg font-medium bg-[#0F969C1A] rounded-[30px] py-2 px-6 uppercase tracking-wide">
