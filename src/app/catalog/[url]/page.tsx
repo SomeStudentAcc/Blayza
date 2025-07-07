@@ -5,9 +5,15 @@ import { Download } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-// If you're using Next.js app router, this is a server component by default
-export default function Product({ params }: { params: { url: string } }) {
-  const { url } = params;
+export const revalidate = 600;
+export const dynamicParams = true;
+
+export default async function Product({
+  params,
+}: {
+  params: Promise<{ url: string }>;
+}) {
+  const { url } = await params;
   const selectedProd = prods.find((el) => el.url === url);
 
   if (!selectedProd) {
