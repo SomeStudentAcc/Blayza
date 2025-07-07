@@ -10,7 +10,7 @@ export default function Header() {
     <header className={`top-0 z-30 w-full sticky bg-white`}>
       <div className="container px-5 md:px-1 mx-auto py-5 flex justify-between items-center">
         <div className="">
-          <Link className="font-extrabold text-[2rem] text-[#0f969c]" href="#">
+          <Link className="font-extrabold text-[2rem] text-[#0f969c]" href="/">
             BLAYZA
           </Link>
         </div>

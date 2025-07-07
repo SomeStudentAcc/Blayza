@@ -2,11 +2,13 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import MyBtn from "../ui/MyBtn";
+import Link from "next/link";
 
 interface Prod {
   id: number;
   name: string;
   img: string;
+  url: string;
   description: string;
   capabilities: {
     id: number;
@@ -21,7 +23,10 @@ interface Props {
 
 export default function MainProductCard({ prod }: Props) {
   return (
-    <div className="rounded-[25px] overflow-hidden bg-white flex flex-col group cursor-pointer">
+    <Link
+      href={`catalog/${prod.url}`}
+      className="rounded-[25px] overflow-hidden bg-white flex flex-col group cursor-pointer"
+    >
       <div className="bg-gradient-to-br from-[#f0f9ff] to-[#e6f7ff] w-full h-[250px] flex justify-center items-center">
         <Image
           className="max-h-[80%] object-contain group-hover:scale-[1.1] transition-all ease-in-out duration-450"
@@ -53,6 +58,6 @@ export default function MainProductCard({ prod }: Props) {
           <MyBtn text="Подробнее" className="w-full" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

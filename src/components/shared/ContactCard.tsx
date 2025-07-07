@@ -36,7 +36,7 @@ const info = [
 
 export default function ContactCard() {
   return (
-    <div className="bg-[#0f969c1a] pb-20 px-5 md:px-1">
+    <div className=" pb-20 px-5 md:px-1">
       <div className="bg-white rounded-[25px] shadow-[0_30px_60px_rgba(0,0,0,0.1)]  flex flex-col md:flex-row overflow-hidden container  mx-auto">
         <div className="contact-info flex flex-col gap-8 p-[2rem] lg:p-[4rem] md:max-w-[505px] w-full">
           <h2 className="text-3xl font-semibold">Свяжитесь с нами</h2>

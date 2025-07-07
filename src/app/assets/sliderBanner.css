@@ -1,0 +1,81 @@
+/* Swiper Navigation Button Base Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  background: transparent !important;
+  border: 2px solid #0f969c !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Remove default Swiper arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+/* Draw right arrow with CSS */
+.swiper-button-next::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0f969c;
+  border-right: 2px solid #0f969c;
+  transform: rotate(45deg);
+}
+
+/* Draw left arrow with CSS (flip) */
+.swiper-button-prev::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #0f969c;
+  border-left: 2px solid #0f969c;
+  transform: rotate(-45deg);
+}
+
+/* Hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(15, 150, 156, 0.2) !important;
+}
+
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, 50px) !important;
+}
+
+.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 50px) !important;
+}
+
+/* Ensure pagination container is positioned correctly */
+.swiper-pagination {
+  bottom: 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important; /* spacing between bullets */
+}
+
+.swiper-pagination-bullet {
+  width: 40px !important;
+  height: 4px !important;
+  background-color: rgba(15, 150, 156, 0.3) !important;
+  border-radius: 9999px !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0f969c !important;
+  height: 6px !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}

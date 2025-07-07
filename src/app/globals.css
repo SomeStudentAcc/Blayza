@@ -5,7 +5,7 @@
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1400px;
+  --breakpoint-xl: 1360px;
 }
 
 @layer base {
@@ -19,6 +19,7 @@
 
 body {
   color: #2d3142;
+  background: #0f969c1a;
 }
 
 .shield {
@@ -28,8 +29,12 @@ body {
 .wind {
   animation: float-box 7s infinite ease-in-out reverse;
 }
+
 .img-card {
   animation: float-card 7s infinite ease-in-out;
+}
+.prod-card {
+  animation: float-prod 7s infinite ease-in-out;
 }
 
 .rotating-border {
@@ -39,6 +44,15 @@ body {
 .contact-info {
   background: linear-gradient(135deg, #0f969c, #31708e);
   color: white;
+}
+
+@layer utilities {
+  @media (max-width: 500px) {
+    .grid-cols-custom-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      width: 100%;
+    }
+  }
 }
 
 @keyframes float-box {
@@ -59,6 +73,18 @@ body {
   }
   50% {
     transform: translateY(+10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-prod {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(+20px);
   }
   100% {
     transform: translateY(0);
