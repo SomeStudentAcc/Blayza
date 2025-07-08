@@ -1,5 +1,6 @@
 import ContactCard from "@/components/shared/ContactCard";
 import DustButton from "@/components/shared/DustButton";
+import GlassesGrid from "@/components/shared/GlasessGrid";
 import MainProducts from "@/components/shared/MainProducts";
 import OurTechnology from "@/components/shared/OurTechnology";
 import SliderBanner from "@/components/shared/SliderBanner";
@@ -16,6 +17,7 @@ export default function Home() {
       <DustButton />
       <MainProducts />
       <WhoAreWe />
+      <GlassesGrid title="Hyper Optics"/>
       <OurTechnology />
       <ContactCard />
     </>
