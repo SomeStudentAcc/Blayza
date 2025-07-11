@@ -1,6 +1,5 @@
 "use client";
 
-import { Power } from "lucide-react";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
