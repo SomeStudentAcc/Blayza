@@ -7,18 +7,17 @@ import React from "react";
 export const revalidate = 600;
 export const dynamicParams = true;
 
-export default  function SubCategory({
+export default async function SubCategory({
   params,
 }: {
-  params: { "sub-category": string };
+  params: Promise<{ category: string }>;
 }) {
-  const { "sub-category": subCategory } = params;
-
+  const { category } = await params;
   // Combine both sources
   const combined = [...glasses, ...prods];
 
   // Filter products by category match
-  const filteredProds = combined.filter((el) => el.category === subCategory);
+  const filteredProds = combined.filter((el) => el.category === category);
 
   // If nothing found
   if (filteredProds.length === 0) {
