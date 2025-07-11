@@ -7,7 +7,7 @@ import React from "react";
 export const revalidate = 600;
 export const dynamicParams = true;
 
-export default async function SubCategory({
+export default  function SubCategory({
   params,
 }: {
   params: { "sub-category": string };

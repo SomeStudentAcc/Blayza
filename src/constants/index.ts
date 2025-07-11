@@ -80,7 +80,7 @@ export const prods = [
       { id: 2, text: "Площадь помещения до 28 м²" },
       { id: 3, text: "Интеллектуальный режим работы" },
     ],
-    price: "15 000 000",
+    price: "13 500 000",
     characteristics: [
       {
         description:
