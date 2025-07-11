@@ -1,4 +1,6 @@
+"use client";
 import { X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Props {
   isMobNav: boolean;
@@ -6,15 +8,16 @@ interface Props {
 }
 
 const navigation = [
-  { title: "Главная" },
-  { title: "О нас" },
-  { title: "Продукция" },
-  { title: "Преимущества" },
-  { title: "Технологии" },
-  { title: "Контакты" },
+  { title: "Главная", url: "#" },
+  { title: "О нас", url: "#" },
+  { title: "Продукция", url: "/catalog" },
+  { title: "Преимущества", url: "#" },
+  { title: "Технологии", url: "#" },
+  { title: "Контакты", url: "#" },
 ];
 
 export default function NavMobile({ isMobNav, setMobNav }: Props) {
+  const router = useRouter();
   return (
     <>
       {/* Overlay */}
@@ -51,7 +54,14 @@ export default function NavMobile({ isMobNav, setMobNav }: Props) {
                 key={index}
                 className="flex justify-center text-xl text-black items-center border-b border-white/10 py-4 cursor-pointer hover:text-gray-300"
               >
-                <span>{item.title}</span>
+                <span
+                  onClick={() => {
+                    router.push(item.url);
+                    setMobNav(false);
+                  }}
+                >
+                  {item.title}
+                </span>
               </li>
             ))}
           </ul>

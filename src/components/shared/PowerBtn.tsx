@@ -9,9 +9,13 @@ interface Particle {
   left: number;
 }
 
+const images = ["/prod1.png", "/prod2.png", "/prod3.png"];
+
 export default function PowerBtn() {
   const [particles, setParticles] = useState<Particle[]>([]);
   const [isOn, setIsOn] = useState(false);
+  const [randomImg, setRandomImg] = useState<string>("");
+
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -31,6 +35,9 @@ export default function PowerBtn() {
     const timeout = setTimeout(() => {
       setParticles(generateParticles());
     }, 0);
+
+    // Pick random image on first load
+    setRandomImg(images[Math.floor(Math.random() * images.length)]);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -79,7 +86,7 @@ export default function PowerBtn() {
       }, i * 100);
     });
 
-    // Reset after 3s (animation duration + buffer)
+    // Reset after 4 seconds
     setTimeout(() => {
       setIsOn(false);
       setParticles(generateParticles());
@@ -106,7 +113,8 @@ export default function PowerBtn() {
       ))}
 
       {/* Card with Button */}
-      {/*  <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center space-y-4 z-10">
+      {/* 
+      <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center space-y-4 z-10">
         <div className="bg-gray-200 text-gray-600 text-lg font-medium px-4 py-2 rounded">
           {isOn ? "ВКЛ" : "ВЫКЛ"}
         </div>
@@ -117,21 +125,24 @@ export default function PowerBtn() {
         >
           <Power size={20} />
         </button>
-      </div> */}
+      </div>
+      */}
 
       <button
         ref={buttonRef}
         onClick={animateParticles}
-        className="text-white p-4 rounded-full bg-white shadow-lg"
+        className="text-white p-4 rounded-full bg-white z-10 shadow-lg"
       >
-        <Image
-          src="/prod1.png"
-          alt=""
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-20 h-18 object-contain"
-        />
+        {randomImg && (
+          <Image
+            src={randomImg}
+            alt=""
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-24 h-22 object-contain"
+          />
+        )}
       </button>
     </div>
   );
