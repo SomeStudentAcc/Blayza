@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import { glasses } from "@/constants/glasses";
 
-const GlassesCard = dynamic(() => import("./GlassesCard"), {
+const GlassesCard = dynamic(() => import("./ProductCard"), {
   loading: () => <div>Loading...</div>,
   ssr: false,
 });

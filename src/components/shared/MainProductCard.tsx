@@ -24,7 +24,7 @@ interface Props {
 export default function MainProductCard({ prod }: Props) {
   return (
     <Link
-      href={`catalog/${prod.url}`}
+      href={`catalog/air-purifiers/${prod.url}`}
       className="rounded-[25px] overflow-hidden bg-white flex flex-col group cursor-pointer"
     >
       <div className="bg-gradient-to-br from-[#f0f9ff] to-[#e6f7ff] w-full h-[250px] flex justify-center items-center">

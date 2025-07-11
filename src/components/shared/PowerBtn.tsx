@@ -1,6 +1,7 @@
 "use client";
 
 import { Power } from "lucide-react";
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 interface Particle {
@@ -106,7 +107,7 @@ export default function PowerBtn() {
       ))}
 
       {/* Card with Button */}
-      <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center space-y-4 z-10">
+      {/*  <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center space-y-4 z-10">
         <div className="bg-gray-200 text-gray-600 text-lg font-medium px-4 py-2 rounded">
           {isOn ? "ВКЛ" : "ВЫКЛ"}
         </div>
@@ -115,9 +116,24 @@ export default function PowerBtn() {
           onClick={animateParticles}
           className="bg-teal-600 hover:bg-teal-700 text-white p-4 rounded-full shadow-lg"
         >
-          <Power size={20}/>
+          <Power size={20} />
         </button>
-      </div>
+      </div> */}
+
+      <button
+        ref={buttonRef}
+        onClick={animateParticles}
+        className="text-white p-4 rounded-full bg-white shadow-lg"
+      >
+        <Image
+          src="/prod1.png"
+          alt=""
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-20 h-18 object-contain"
+        />
+      </button>
     </div>
   );
 }

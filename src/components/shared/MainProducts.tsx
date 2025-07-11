@@ -1,6 +1,6 @@
 import React from "react";
-import MainProductCard from "./MainProductCard";
 import { prods } from "@/constants";
+import ProductCard from "./ProductCard";
 
 export default function MainProducts() {
   return (
@@ -20,7 +20,7 @@ export default function MainProducts() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 pb-20">
           {prods.map((el) => (
-            <MainProductCard key={el.id} prod={el} />
+            <ProductCard key={el.id} prod={el} />
           ))}
         </div>
       </div>
